@@ -1,7 +1,3 @@
-<script type="text/javascript" src="js/bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="js/bower_components/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="js/bower_components/angular-ckeditor/angular-ckeditor.min.js"></script>
-
 <form name="editForm" role="form" novalidate ng-submit="vm.save()">
 
     <div class="modal-header">
@@ -24,11 +20,7 @@
         </div>
         <div class="form-group">
             <label class="control-label" for="field_attachedLetter">Attached Letter</label>
-            <div ckeditor="options" ng-model="textdata" ready="onReady"></div>
-			
-			<script type="text/javascript" src="js/editor.js"></script>
-            <rich-text-diff left="beforeString" right="afterString" ng-model="vm.friendlyFraudNotification.attachedLetter">
-            </rich-text-diff>
+            <textarea rows="20" ng-model="vm.friendlyFraudNotification.attachedLetter"></textarea>
         </div>
 
         <div class="form-group" ng-show="false">
