@@ -1,0 +1,54 @@
+<div>
+    <h2>Disputes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        asd
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="status"><span>Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="disputeType"><span>Dispute Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="caseNumber"><span>Case Number</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="filedDay"><span>Filed Day</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dispute in vm.disputes track by dispute.id">
+                    <td>{{dispute.status}}</td>
+                    <td>{{dispute.disputeType}}</td>
+                    <td>{{dispute.caseNumber}}</td>
+                    <td>{{dispute.filedDay | date:'mediumDate'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="dispute-setdeside({id:dispute.id})"
+                                    class="btn btn-info btn-sm">
+                                Set decision
+                            </button>
+                            <button type="submit"
+                                    ui-sref="disputechallenge-detail({id:dispute.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="disputechallenge.delete({id:dispute.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

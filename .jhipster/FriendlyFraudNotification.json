@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "dispute",
+            "otherEntityName": "dispute",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "friendlyFraudNotification"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "attachedLetter",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161231234632",
+    "entityTableName": "friendly_fraud_notification",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "challenge"
+}

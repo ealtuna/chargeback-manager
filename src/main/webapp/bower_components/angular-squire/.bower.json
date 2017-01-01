@@ -1,0 +1,46 @@
+{
+  "name": "angular-squire",
+  "version": "2.5.6",
+  "homepage": "https://github.com/Catalant/angular-squire",
+  "authors": [
+    "Catalant Technologies, Inc"
+  ],
+  "main": [
+    "dist/css/angular-squire.css",
+    "dist/scripts/angular-squire.js"
+  ],
+  "description": "angularjs directive for squire rich text editor",
+  "license": "MIT",
+  "ignore": [
+    ".tmp/",
+    ".compiled/",
+    "node_modules/",
+    "test/",
+    ".gitignore",
+    "coffeelint.json",
+    "gulpfile.coffee",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "~1.3.8",
+    "squire-rte": "1.6.4"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "squire-rte": {
+      "main": [
+        "build/squire-raw.js"
+      ]
+    }
+  },
+  "_release": "2.5.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.5.6",
+    "commit": "d179e67b55f3c5956f603dfe2d1fbaeff30650f1"
+  },
+  "_source": "https://github.com/HourlyNerd/angular-squire.git",
+  "_target": "^2.5.6",
+  "_originalSource": "angular-squire",
+  "_direct": true
+}

@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span>Dispute</span> {{vm.dispute.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Status</span></dt>
+        <dd>
+            <span>{{vm.dispute.status}}</span>
+        </dd>
+        <dt><span>Dispute Type</span></dt>
+        <dd>
+            <span>{{vm.dispute.disputeType}}</span>
+        </dd>
+        <dt><span>Case Number</span></dt>
+        <dd>
+            <span>{{vm.dispute.caseNumber}}</span>
+        </dd>
+        <dt><span>Filed Day</span></dt>
+        <dd>
+            <span>{{vm.dispute.filedDay | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Amount</span></dt>
+        <dd>
+            <span>{{vm.dispute.amount}}</span>
+        </dd>
+        <dt><span>Card Type</span></dt>
+        <dd>
+            <span>{{vm.dispute.cardType}}</span>
+        </dd>
+        <dt><span>Reason Code</span></dt>
+        <dd>
+            <span>{{vm.dispute.reasonCode}}</span>
+        </dd>
+        <dt><span>Notes</span></dt>
+        <dd>
+            <span>{{vm.dispute.notes}}</span>
+        </dd>
+        <dt><span>Attached Letter</span></dt>
+        <dd>
+            <span>{{vm.dispute.attachedLetter}}</span>
+        </dd>
+        <dt><span>Transaction</span></dt>
+        <dd>
+            <a ui-sref="transactionchallenge-detail({id:vm.dispute.transaction.id})">{{vm.dispute.transaction.id}}</a>
+        </dd>
+        <dt><span>Shipping</span></dt>
+        <dd>
+            <a ui-sref="shippingchallenge-detail({id:vm.dispute.shipping.id})">{{vm.dispute.shipping.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="disputechallenge-detail.edit({id:vm.dispute.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

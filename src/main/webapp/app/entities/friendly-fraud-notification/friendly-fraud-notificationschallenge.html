@@ -1,0 +1,66 @@
+<div>
+    <h2>Friendly Fraud Notifications</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="friendly-fraud-notificationchallenge.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Friendly Fraud Notification
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="email"><span>Email</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="attachedLetter"><span>Attached Letter</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dispute.id"><span>Dispute</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="friendlyFraudNotification in vm.friendlyFraudNotifications track by friendlyFraudNotification.id">
+                    <td><a ui-sref="friendly-fraud-notificationchallenge-detail({id:friendlyFraudNotification.id})">{{friendlyFraudNotification.id}}</a></td>
+                    <td>{{friendlyFraudNotification.email}}</td>
+                    <td>{{friendlyFraudNotification.attachedLetter}}</td>
+                    <td>
+                        <a ui-sref="disputechallenge-detail({id:friendlyFraudNotification.dispute.id})">{{friendlyFraudNotification.dispute.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="friendly-fraud-notificationchallenge-detail({id:friendlyFraudNotification.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="friendly-fraud-notificationchallenge.edit({id:friendlyFraudNotification.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="friendly-fraud-notificationchallenge.delete({id:friendlyFraudNotification.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

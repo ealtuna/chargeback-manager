@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span>Shipping</span> {{vm.shipping.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Customer Id</span></dt>
+        <dd>
+            <span>{{vm.shipping.customerId}}</span>
+        </dd>
+        <dt><span>Ip Address</span></dt>
+        <dd>
+            <span>{{vm.shipping.ipAddress}}</span>
+        </dd>
+        <dt><span>Product Id</span></dt>
+        <dd>
+            <span>{{vm.shipping.productId}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{vm.shipping.email}}</span>
+        </dd>
+        <dt><span>Order Id</span></dt>
+        <dd>
+            <span>{{vm.shipping.orderId}}</span>
+        </dd>
+        <dt><span>Product In Campaign</span></dt>
+        <dd>
+            <span>{{vm.shipping.productInCampaign}}</span>
+        </dd>
+        <dt><span>Order Amount</span></dt>
+        <dd>
+            <span>{{vm.shipping.orderAmount}}</span>
+        </dd>
+        <dt><span>Order Date</span></dt>
+        <dd>
+            <span>{{vm.shipping.orderDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Order Status</span></dt>
+        <dd>
+            <span>{{vm.shipping.orderStatus}}</span>
+        </dd>
+        <dt><span>Shipping Service</span></dt>
+        <dd>
+            <span>{{vm.shipping.shippingService}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="shippingchallenge-detail.edit({id:vm.shipping.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "customerId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ipAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productInCampaign",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderAmount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "orderDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "orderStatus",
+            "fieldType": "OrderStatus",
+            "fieldValues": "SHIPPED,NOT_SHIPPED"
+        },
+        {
+            "fieldName": "shippingService",
+            "fieldType": "ShippingService",
+            "fieldValues": "UPS,USPS,FEDEX,OTHER"
+        }
+    ],
+    "changelogDate": "20161230222901",
+    "entityTableName": "shipping",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "challenge"
+}

@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "dispute",
+            "otherEntityName": "dispute",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161230222900",
+    "entityTableName": "refund",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "challenge"
+}

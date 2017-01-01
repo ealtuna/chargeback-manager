@@ -1,0 +1,89 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "transaction",
+            "otherEntityName": "transaction",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "dispute"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "shipping",
+            "otherEntityName": "shipping",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "dispute"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "refunds",
+            "otherEntityName": "refund",
+            "otherEntityRelationshipName": "dispute"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "DisputeStatus",
+            "fieldValues": "NEW,PROCESSING,NOT_FOUGHT,DESICION_PENDING,WON,LOST"
+        },
+        {
+            "fieldName": "disputeType",
+            "fieldType": "DisputeType",
+            "fieldValues": "CHARGEBACK,RETRIEVAL_REQUEST"
+        },
+        {
+            "fieldName": "caseNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "filedDay",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "cardType",
+            "fieldType": "CardType",
+            "fieldValues": "VISA,MASTERCARD,DISCOVER,AMEX"
+        },
+        {
+            "fieldName": "reasonCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "analystDesition",
+            "fieldType": "AnalystDesition",
+            "fieldValues": "TRUE_FRAUD,FRIENDLY_FRAUD,UNABLE_TO_DECIDE"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "transactionId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "shippingId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161230222958",
+    "entityTableName": "dispute",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "challenge"
+}

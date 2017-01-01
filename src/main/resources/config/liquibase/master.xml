@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161230222900_added_entity_Refund.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161230222901_added_entity_Shipping.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161230222958_added_entity_Dispute.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161230222959_added_entity_Transaction.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161231234632_added_entity_FriendlyFraudNotification.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20161230222900_added_entity_constraints_Refund.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161230222958_added_entity_constraints_Dispute.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161231234632_added_entity_constraints_FriendlyFraudNotification.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

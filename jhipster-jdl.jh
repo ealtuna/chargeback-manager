@@ -1,0 +1,95 @@
+// JDL diagram
+entity Dispute {
+    status DisputeStatus,
+    disputeType DisputeType,
+    caseNumber String,
+    filedDay LocalDate,
+    amount Double,
+    cardType CardType,
+    reasonCode String,
+	analystDesition AnalystDesition,
+	notes String,
+	transactionId Integer required,
+	shippingId Integer required
+}
+
+enum DisputeStatus {
+    NEW, PROCESSING, NOT_FOUGHT, DESICION_PENDING, WON, LOST
+}
+
+enum DisputeType {
+    CHARGEBACK, RETRIEVAL_REQUEST
+}
+
+enum CardType {
+    VISA, MASTERCARD, DISCOVER, AMEX
+}
+
+enum AnalystDesition {
+    TRUE_FRAUD, FRIENDLY_FRAUD, UNABLE_TO_DECIDE
+}
+
+entity FriendlyFraudNotification {
+    email String,
+	attachedLetter String
+}
+
+entity Transaction {
+    id String,
+    date LocalDate,
+    amount String,
+    addressVerification String,
+    cvv String,
+    authCode String
+}
+
+entity Refund {
+    id String,
+    date LocalDate,
+    amount String
+}
+
+entity Shipping {
+   customerId String,
+   ipAddress String,
+   productId String,
+   email String,
+   orderId String,
+   productInCampaign String,
+   orderAmount Float,
+   orderDate LocalDate,
+   orderStatus OrderStatus,
+   shippingService ShippingService
+}
+
+enum OrderStatus {
+   SHIPPED, NOT_SHIPPED
+}
+
+enum ShippingService {
+   UPS, USPS, FEDEX, OTHER
+}
+
+relationship OneToOne {
+	Dispute{transaction} to Transaction
+}
+
+relationship OneToOne {
+	FriendlyFraudNotification{dispute} to Dispute
+}
+
+relationship OneToOne {
+    Dispute{shipping} to Shipping
+}
+
+relationship OneToMany {
+	Dispute{refunds} to Refund
+}
+
+// Set pagination options
+paginate * with pagination
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with challenge

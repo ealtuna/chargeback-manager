@@ -1,0 +1,94 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myShippingLabel">Create or edit a Shipping</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.shipping.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.shipping.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_customerId">Customer Id</label>
+            <input type="text" class="form-control" name="customerId" id="field_customerId"
+                    ng-model="vm.shipping.customerId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_ipAddress">Ip Address</label>
+            <input type="text" class="form-control" name="ipAddress" id="field_ipAddress"
+                    ng-model="vm.shipping.ipAddress"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_productId">Product Id</label>
+            <input type="text" class="form-control" name="productId" id="field_productId"
+                    ng-model="vm.shipping.productId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.shipping.email"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderId">Order Id</label>
+            <input type="text" class="form-control" name="orderId" id="field_orderId"
+                    ng-model="vm.shipping.orderId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_productInCampaign">Product In Campaign</label>
+            <input type="text" class="form-control" name="productInCampaign" id="field_productInCampaign"
+                    ng-model="vm.shipping.productInCampaign"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderAmount">Order Amount</label>
+            <input type="number" class="form-control" name="orderAmount" id="field_orderAmount"
+                    ng-model="vm.shipping.orderAmount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderDate">Order Date</label>
+                <div class="input-group">
+                    <input id="field_orderDate" type="text" class="form-control" name="orderDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.shipping.orderDate" is-open="vm.datePickerOpenStatus.orderDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('orderDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_orderStatus">Order Status</label>
+            <select class="form-control" name="orderStatus" ng-model="vm.shipping.orderStatus" id="field_orderStatus">
+                <option value="SHIPPED">SHIPPED</option>
+                <option value="NOT_SHIPPED" data-translate="challengeApp.OrderStatus.NOT_SHIPPED">NOT_SHIPPED</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_shippingService">Shipping Service</label>
+            <select class="form-control" name="shippingService" ng-model="vm.shipping.shippingService" id="field_shippingService">
+                <option value="UPS">UPS</option>
+                <option value="USPS">USPS</option>
+                <option value="FEDEX">FEDEX</option>
+                <option value="OTHER">OTHER</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
