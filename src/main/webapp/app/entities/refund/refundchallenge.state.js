@@ -101,7 +101,7 @@
         })
         .state('refundchallengenew', {
             parent: 'disputechallenge',
-            url: '/new',
+            url: '/newrefund',
             data: {
                 authorities: ['ROLE_USER']
             },

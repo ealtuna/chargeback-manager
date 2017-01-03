@@ -210,9 +210,9 @@
                 });
             }]
         })
-        .state('disputechallenge-new', {
-            parent: 'disputechallenge',
-            url: '/new',
+        .state('disputechallengenew', {
+            parent: 'entity',
+            url: '/newdispute',
             data: {
                 authorities: ['ROLE_USER']
             },

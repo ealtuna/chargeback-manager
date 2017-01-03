@@ -100,8 +100,8 @@
             }]
         })
         .state('shippingchallenge-new', {
-            parent: 'disputechallenge-new',
-            url: '/new',
+            parent: 'disputechallengenew',
+            url: '/newshipping',
             data: {
                 authorities: ['ROLE_USER']
             },
@@ -130,9 +130,9 @@
                         }
                     }
                 }).result.then(function() {
-                    $state.go('disputechallenge-new', null, { reload: 'disputechallenge-new' });
+                    $state.go('disputechallengenew', null, { reload: 'disputechallengenew' });
                 }, function() {
-                    $state.go('disputechallenge-new');
+                    $state.go('disputechallengenew');
                 });
             }]
         })
