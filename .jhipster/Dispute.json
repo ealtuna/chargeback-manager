@@ -64,20 +64,6 @@
         {
             "fieldName": "notes",
             "fieldType": "String"
-        },
-        {
-            "fieldName": "transactionId",
-            "fieldType": "Integer",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "shippingId",
-            "fieldType": "Integer",
-            "fieldValidateRules": [
-                "required"
-            ]
         }
     ],
     "changelogDate": "20161230222958",

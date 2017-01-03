@@ -99,8 +99,8 @@
                 });
             }]
         })
-        .state('refundchallenge.new', {
-            parent: 'refundchallenge',
+        .state('refundchallengenew', {
+            parent: 'disputechallenge',
             url: '/new',
             data: {
                 authorities: ['ROLE_USER']
@@ -122,9 +122,9 @@
                         }
                     }
                 }).result.then(function() {
-                    $state.go('refundchallenge', null, { reload: 'refundchallenge' });
+                    $state.go('disputechallenge', null, { reload: 'disputechallenge' });
                 }, function() {
-                    $state.go('refundchallenge');
+                    $state.go('disputechallenge');
                 });
             }]
         })

@@ -24,8 +24,8 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/six
-        name: six
+        url: jdbc:postgresql://localhost:5432/seven
+        name: seven
         username: postgres
         password: firestorm
     jpa:

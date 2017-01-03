@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2017-01-01T20:11:31+0100",
+    date = "2017-01-03T13:40:10+0100",
     comments = "version: 1.1.0.Final, compiler: Eclipse JDT (IDE) 3.12.2.v20161117-1814, environment: Java 1.8.0_20 (Oracle Corporation)"
 )
 @Component
@@ -23,16 +23,17 @@ public class ShippingMapperImpl implements ShippingMapper {
 
         ShippingDTO shippingDTO = new ShippingDTO();
 
-        shippingDTO.setId( shipping.getId() );
         shippingDTO.setCustomerId( shipping.getCustomerId() );
-        shippingDTO.setIpAddress( shipping.getIpAddress() );
-        shippingDTO.setProductId( shipping.getProductId() );
         shippingDTO.setEmail( shipping.getEmail() );
-        shippingDTO.setOrderId( shipping.getOrderId() );
-        shippingDTO.setProductInCampaign( shipping.getProductInCampaign() );
+        shippingDTO.setId( shipping.getId() );
+        shippingDTO.setIpAddress( shipping.getIpAddress() );
         shippingDTO.setOrderAmount( shipping.getOrderAmount() );
         shippingDTO.setOrderDate( shipping.getOrderDate() );
+        shippingDTO.setOrderId( shipping.getOrderId() );
         shippingDTO.setOrderStatus( shipping.getOrderStatus() );
+        shippingDTO.setProductId( shipping.getProductId() );
+        shippingDTO.setProductInCampaign( shipping.getProductInCampaign() );
+        shippingDTO.setShippingAgency( shipping.getShippingAgency() );
 
         return shippingDTO;
     }
@@ -59,16 +60,17 @@ public class ShippingMapperImpl implements ShippingMapper {
 
         Shipping shipping = new Shipping();
 
-        shipping.setId( shippingDTO.getId() );
         shipping.setCustomerId( shippingDTO.getCustomerId() );
-        shipping.setIpAddress( shippingDTO.getIpAddress() );
-        shipping.setProductId( shippingDTO.getProductId() );
         shipping.setEmail( shippingDTO.getEmail() );
-        shipping.setOrderId( shippingDTO.getOrderId() );
-        shipping.setProductInCampaign( shippingDTO.getProductInCampaign() );
+        shipping.setId( shippingDTO.getId() );
+        shipping.setIpAddress( shippingDTO.getIpAddress() );
         shipping.setOrderAmount( shippingDTO.getOrderAmount() );
         shipping.setOrderDate( shippingDTO.getOrderDate() );
+        shipping.setOrderId( shippingDTO.getOrderId() );
         shipping.setOrderStatus( shippingDTO.getOrderStatus() );
+        shipping.setProductId( shippingDTO.getProductId() );
+        shipping.setProductInCampaign( shippingDTO.getProductInCampaign() );
+        shipping.setShippingAgency( shippingDTO.getShippingAgency() );
 
         return shipping;
     }

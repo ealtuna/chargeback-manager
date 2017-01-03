@@ -8,7 +8,7 @@ import java.util.Objects;
 
 import com.altuna.challenge.domain.enumeration.OrderStatus;
 
-import com.altuna.challenge.domain.enumeration.ShippingService;
+import com.altuna.challenge.domain.enumeration.ShippingAgency;
 
 /**
  * A Shipping.
@@ -52,8 +52,8 @@ public class Shipping implements Serializable {
     private OrderStatus orderStatus;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "shipping_service")
-    private ShippingService shippingService;
+    @Column(name = "shipping_agency")
+    private ShippingAgency shippingAgency;
 
     public Long getId() {
         return id;
@@ -180,17 +180,17 @@ public class Shipping implements Serializable {
         this.orderStatus = orderStatus;
     }
 
-    public ShippingService getShippingService() {
-        return shippingService;
+    public ShippingAgency getShippingAgency() {
+        return shippingAgency;
     }
 
-    public Shipping shippingService(ShippingService shippingService) {
-        this.shippingService = shippingService;
+    public Shipping shippingAgency(ShippingAgency shippingAgency) {
+        this.shippingAgency = shippingAgency;
         return this;
     }
 
-    public void setShippingService(ShippingService shippingService) {
-        this.shippingService = shippingService;
+    public void setShippingAgency(ShippingAgency shippingAgency) {
+        this.shippingAgency = shippingAgency;
     }
 
     @Override
@@ -226,7 +226,7 @@ public class Shipping implements Serializable {
             ", orderAmount='" + orderAmount + "'" +
             ", orderDate='" + orderDate + "'" +
             ", orderStatus='" + orderStatus + "'" +
-            ", shippingService='" + shippingService + "'" +
+            ", shippingAgency='" + shippingAgency + "'" +
             '}';
     }
 }

@@ -35,7 +35,6 @@ import com.altuna.challenge.domain.enumeration.DisputeStatus;
 import com.altuna.challenge.domain.enumeration.DisputeType;
 import com.altuna.challenge.domain.enumeration.CardType;
 import com.altuna.challenge.domain.enumeration.AnalystDesition;
-import com.altuna.challenge.domain.enumeration.FriendlyFraudDesition;
 /**
  * Test class for the DisputeResource REST controller.
  *
@@ -71,9 +70,6 @@ public class DisputeResourceIntTest {
 
     private static final String DEFAULT_NOTES = "AAAAAAAAAA";
     private static final String UPDATED_NOTES = "BBBBBBBBBB";
-
-    private static final FriendlyFraudDesition DEFAULT_DESITION = FriendlyFraudDesition.WON;
-    private static final FriendlyFraudDesition UPDATED_DESITION = FriendlyFraudDesition.LOST;
 
     @Inject
     private DisputeRepository disputeRepository;
@@ -120,8 +116,7 @@ public class DisputeResourceIntTest {
                 .cardType(DEFAULT_CARD_TYPE)
                 .reasonCode(DEFAULT_REASON_CODE)
                 .analystDesition(DEFAULT_ANALYST_DESITION)
-                .notes(DEFAULT_NOTES)
-                .desition(DEFAULT_DESITION);
+                .notes(DEFAULT_NOTES);
         return dispute;
     }
 
@@ -155,7 +150,6 @@ public class DisputeResourceIntTest {
         assertThat(testDispute.getReasonCode()).isEqualTo(DEFAULT_REASON_CODE);
         assertThat(testDispute.getAnalystDesition()).isEqualTo(DEFAULT_ANALYST_DESITION);
         assertThat(testDispute.getNotes()).isEqualTo(DEFAULT_NOTES);
-        assertThat(testDispute.getDesition()).isEqualTo(DEFAULT_DESITION);
     }
 
     @Test
@@ -197,8 +191,7 @@ public class DisputeResourceIntTest {
             .andExpect(jsonPath("$.[*].cardType").value(hasItem(DEFAULT_CARD_TYPE.toString())))
             .andExpect(jsonPath("$.[*].reasonCode").value(hasItem(DEFAULT_REASON_CODE.toString())))
             .andExpect(jsonPath("$.[*].analystDesition").value(hasItem(DEFAULT_ANALYST_DESITION.toString())))
-            .andExpect(jsonPath("$.[*].notes").value(hasItem(DEFAULT_NOTES.toString())))
-            .andExpect(jsonPath("$.[*].desition").value(hasItem(DEFAULT_DESITION.toString())));
+            .andExpect(jsonPath("$.[*].notes").value(hasItem(DEFAULT_NOTES.toString())));
     }
 
     @Test
@@ -220,8 +213,7 @@ public class DisputeResourceIntTest {
             .andExpect(jsonPath("$.cardType").value(DEFAULT_CARD_TYPE.toString()))
             .andExpect(jsonPath("$.reasonCode").value(DEFAULT_REASON_CODE.toString()))
             .andExpect(jsonPath("$.analystDesition").value(DEFAULT_ANALYST_DESITION.toString()))
-            .andExpect(jsonPath("$.notes").value(DEFAULT_NOTES.toString()))
-            .andExpect(jsonPath("$.desition").value(DEFAULT_DESITION.toString()));
+            .andExpect(jsonPath("$.notes").value(DEFAULT_NOTES.toString()));
     }
 
     @Test
@@ -251,8 +243,7 @@ public class DisputeResourceIntTest {
                 .cardType(UPDATED_CARD_TYPE)
                 .reasonCode(UPDATED_REASON_CODE)
                 .analystDesition(UPDATED_ANALYST_DESITION)
-                .notes(UPDATED_NOTES)
-                .desition(UPDATED_DESITION);
+                .notes(UPDATED_NOTES);
 
         restDisputeMockMvc.perform(put("/api/disputes")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -272,7 +263,6 @@ public class DisputeResourceIntTest {
         assertThat(testDispute.getReasonCode()).isEqualTo(UPDATED_REASON_CODE);
         assertThat(testDispute.getAnalystDesition()).isEqualTo(UPDATED_ANALYST_DESITION);
         assertThat(testDispute.getNotes()).isEqualTo(UPDATED_NOTES);
-        assertThat(testDispute.getDesition()).isEqualTo(UPDATED_DESITION);
     }
 
     @Test

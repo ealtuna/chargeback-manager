@@ -9,6 +9,8 @@
 
     function FriendlyFraudNotificationChallengeController ($scope, $state, FriendlyFraudNotification, ParseLinks, AlertService, paginationConstants, pagingParams) {
         var vm = this;
+        
+        $scope.textAngularOpts = {}
 
         vm.loadPage = loadPage;
         vm.predicate = pagingParams.predicate;

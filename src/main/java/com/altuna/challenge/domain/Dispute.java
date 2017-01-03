@@ -3,7 +3,6 @@ package com.altuna.challenge.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -36,11 +35,9 @@ public class Dispute implements Serializable {
     private DisputeStatus status;
 
     @Enumerated(EnumType.STRING)
-    @NotNull
     @Column(name = "dispute_type")
     private DisputeType disputeType;
 
-    @NotNull
     @Column(name = "case_number")
     private String caseNumber;
 
@@ -65,12 +62,10 @@ public class Dispute implements Serializable {
     private String notes;
 
     @OneToOne
-    @NotNull
     @JoinColumn(unique = true)
     private Transaction transaction;
 
     @OneToOne
-    @NotNull
     @JoinColumn(unique = true)
     private Shipping shipping;
 

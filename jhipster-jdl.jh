@@ -8,9 +8,7 @@ entity Dispute {
     cardType CardType,
     reasonCode String,
 	analystDesition AnalystDesition,
-	notes String,
-	transactionId Integer required,
-	shippingId Integer required
+	notes String
 }
 
 enum DisputeStatus {
@@ -59,14 +57,14 @@ entity Shipping {
    orderAmount Float,
    orderDate LocalDate,
    orderStatus OrderStatus,
-   shippingService ShippingService
+   shippingAgency ShippingAgency
 }
 
 enum OrderStatus {
    SHIPPED, NOT_SHIPPED
 }
 
-enum ShippingService {
+enum ShippingAgency {
    UPS, USPS, FEDEX, OTHER
 }
 

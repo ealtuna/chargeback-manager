@@ -67,7 +67,7 @@ class ShippingGatlingTest extends Simulation {
             .exec(http("Create new shipping")
             .post("/api/shippings")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "customerId":"SAMPLE_TEXT", "ipAddress":"SAMPLE_TEXT", "productId":"SAMPLE_TEXT", "email":"SAMPLE_TEXT", "orderId":"SAMPLE_TEXT", "productInCampaign":"SAMPLE_TEXT", "orderAmount":null, "orderDate":"2020-01-01T00:00:00.000Z", "orderStatus":null, "shippingService":null}""")).asJSON
+            .body(StringBody("""{"id":null, "customerId":"SAMPLE_TEXT", "ipAddress":"SAMPLE_TEXT", "productId":"SAMPLE_TEXT", "email":"SAMPLE_TEXT", "orderId":"SAMPLE_TEXT", "productInCampaign":"SAMPLE_TEXT", "orderAmount":null, "orderDate":"2020-01-01T00:00:00.000Z", "orderStatus":null, "shippingAgency":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_shipping_url"))).exitHereIfFailed
             .pause(10)

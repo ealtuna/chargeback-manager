@@ -40,8 +40,8 @@
             "fieldValues": "SHIPPED,NOT_SHIPPED"
         },
         {
-            "fieldName": "shippingService",
-            "fieldType": "ShippingService",
+            "fieldName": "shippingAgency",
+            "fieldType": "ShippingAgency",
             "fieldValues": "UPS,USPS,FEDEX,OTHER"
         }
     ],

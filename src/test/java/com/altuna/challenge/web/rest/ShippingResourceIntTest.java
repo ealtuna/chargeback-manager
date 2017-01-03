@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.altuna.challenge.domain.enumeration.OrderStatus;
-import com.altuna.challenge.domain.enumeration.ShippingService;
+import com.altuna.challenge.domain.enumeration.ShippingAgency;
 /**
  * Test class for the ShippingResource REST controller.
  *
@@ -69,8 +69,8 @@ public class ShippingResourceIntTest {
     private static final OrderStatus DEFAULT_ORDER_STATUS = OrderStatus.SHIPPED;
     private static final OrderStatus UPDATED_ORDER_STATUS = OrderStatus.NOT_SHIPPED;
 
-    private static final ShippingService DEFAULT_SHIPPING_SERVICE = ShippingService.UPS;
-    private static final ShippingService UPDATED_SHIPPING_SERVICE = ShippingService.USPS;
+    private static final ShippingAgency DEFAULT_SHIPPING_AGENCY = ShippingAgency.UPS;
+    private static final ShippingAgency UPDATED_SHIPPING_AGENCY = ShippingAgency.USPS;
 
     @Inject
     private ShippingRepository shippingRepository;
@@ -118,7 +118,7 @@ public class ShippingResourceIntTest {
                 .orderAmount(DEFAULT_ORDER_AMOUNT)
                 .orderDate(DEFAULT_ORDER_DATE)
                 .orderStatus(DEFAULT_ORDER_STATUS)
-                .shippingService(DEFAULT_SHIPPING_SERVICE);
+                .shippingAgency(DEFAULT_SHIPPING_AGENCY);
         return shipping;
     }
 
@@ -152,7 +152,7 @@ public class ShippingResourceIntTest {
         assertThat(testShipping.getOrderAmount()).isEqualTo(DEFAULT_ORDER_AMOUNT);
         assertThat(testShipping.getOrderDate()).isEqualTo(DEFAULT_ORDER_DATE);
         assertThat(testShipping.getOrderStatus()).isEqualTo(DEFAULT_ORDER_STATUS);
-        assertThat(testShipping.getShippingService()).isEqualTo(DEFAULT_SHIPPING_SERVICE);
+        assertThat(testShipping.getShippingAgency()).isEqualTo(DEFAULT_SHIPPING_AGENCY);
     }
 
     @Test
@@ -195,7 +195,7 @@ public class ShippingResourceIntTest {
             .andExpect(jsonPath("$.[*].orderAmount").value(hasItem(DEFAULT_ORDER_AMOUNT.doubleValue())))
             .andExpect(jsonPath("$.[*].orderDate").value(hasItem(DEFAULT_ORDER_DATE.toString())))
             .andExpect(jsonPath("$.[*].orderStatus").value(hasItem(DEFAULT_ORDER_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].shippingService").value(hasItem(DEFAULT_SHIPPING_SERVICE.toString())));
+            .andExpect(jsonPath("$.[*].shippingAgency").value(hasItem(DEFAULT_SHIPPING_AGENCY.toString())));
     }
 
     @Test
@@ -218,7 +218,7 @@ public class ShippingResourceIntTest {
             .andExpect(jsonPath("$.orderAmount").value(DEFAULT_ORDER_AMOUNT.doubleValue()))
             .andExpect(jsonPath("$.orderDate").value(DEFAULT_ORDER_DATE.toString()))
             .andExpect(jsonPath("$.orderStatus").value(DEFAULT_ORDER_STATUS.toString()))
-            .andExpect(jsonPath("$.shippingService").value(DEFAULT_SHIPPING_SERVICE.toString()));
+            .andExpect(jsonPath("$.shippingAgency").value(DEFAULT_SHIPPING_AGENCY.toString()));
     }
 
     @Test
@@ -249,7 +249,7 @@ public class ShippingResourceIntTest {
                 .orderAmount(UPDATED_ORDER_AMOUNT)
                 .orderDate(UPDATED_ORDER_DATE)
                 .orderStatus(UPDATED_ORDER_STATUS)
-                .shippingService(UPDATED_SHIPPING_SERVICE);
+                .shippingAgency(UPDATED_SHIPPING_AGENCY);
 
         restShippingMockMvc.perform(put("/api/shippings")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -269,7 +269,7 @@ public class ShippingResourceIntTest {
         assertThat(testShipping.getOrderAmount()).isEqualTo(UPDATED_ORDER_AMOUNT);
         assertThat(testShipping.getOrderDate()).isEqualTo(UPDATED_ORDER_DATE);
         assertThat(testShipping.getOrderStatus()).isEqualTo(UPDATED_ORDER_STATUS);
-        assertThat(testShipping.getShippingService()).isEqualTo(UPDATED_SHIPPING_SERVICE);
+        assertThat(testShipping.getShippingAgency()).isEqualTo(UPDATED_SHIPPING_AGENCY);
     }
 
     @Test

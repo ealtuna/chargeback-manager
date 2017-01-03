@@ -67,7 +67,7 @@ class DisputeGatlingTest extends Simulation {
             .exec(http("Create new dispute")
             .post("/api/disputes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "status":null, "disputeType":null, "caseNumber":"SAMPLE_TEXT", "filedDay":"2020-01-01T00:00:00.000Z", "amount":null, "cardType":null, "reasonCode":"SAMPLE_TEXT", "analystDesition":null, "notes":"SAMPLE_TEXT", "desition":null}""")).asJSON
+            .body(StringBody("""{"id":null, "status":null, "disputeType":null, "caseNumber":"SAMPLE_TEXT", "filedDay":"2020-01-01T00:00:00.000Z", "amount":null, "cardType":null, "reasonCode":"SAMPLE_TEXT", "analystDesition":null, "notes":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_dispute_url"))).exitHereIfFailed
             .pause(10)

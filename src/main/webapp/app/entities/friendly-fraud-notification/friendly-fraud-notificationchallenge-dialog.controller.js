@@ -32,9 +32,7 @@
             } else {
                 FriendlyFraudNotification.save(vm.friendlyFraudNotification);
             }
-            alert(333)
             DisputeFriendlyFraud.friendlyfraud({'id': vm.friendlyFraudNotification.dispute.id}, onSaveSuccess, onSaveError);
-            alert(222)
         }
 
         function onSaveSuccess (result) {

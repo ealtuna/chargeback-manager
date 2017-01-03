@@ -2,8 +2,6 @@ package com.altuna.challenge.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -28,7 +26,6 @@ public class Refund implements Serializable {
     private String amount;
 
     @ManyToOne
-    @NotNull
     private Dispute dispute;
 
     public Long getId() {

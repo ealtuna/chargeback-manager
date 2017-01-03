@@ -60,7 +60,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="shipping_service" type="varchar(255)">
+            <column name="shipping_agency" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             
